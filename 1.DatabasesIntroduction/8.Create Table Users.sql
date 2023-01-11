@@ -2,7 +2,7 @@ USE [MINIONS]
 
 CREATE TABLE [Users]
 (
-		[Id] INT PRIMARY KEY IDENTITY,
+		[Id] INT PRIMARY KEY IDENTITY (1,1),
 		[Username] VARCHAR(30) NOT NULL,
 		[Password] VARCHAR(26) NOT NULL,
 		[ProfilePicture] IMAGE,

@@ -2,7 +2,7 @@ USE [MINIONS]
 
 CREATE TABLE [People]
 (
-		[Id] INT PRIMARY KEY IDENTITY,
+		[Id] INT PRIMARY KEY IDENTITY (1,1),
 		[Name] VARCHAR(200) NOT NULL,
 		[Picture] IMAGE,
 		[Height] DECIMAL(3, 2),
