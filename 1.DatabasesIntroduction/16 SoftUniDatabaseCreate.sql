@@ -1,0 +1,34 @@
+--16)
+CREATE DATABASE SoftUni;
+
+CREATE TABLE Towns
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    [Name] VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Addresses
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    AddressText VARCHAR(100) NOT NULL,
+    TownId INT NOT NULL FOREIGN KEY (TownId) REFERENCES Towns(Id)
+)
+
+CREATE TABLE Departments
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    [Name] VARCHAR(100) NOT NULL
+)
+
+CREATE TABLE Employees
+(
+    Id INT PRIMARY KEY IDENTITY(1,1),
+    FirstName VARCHAR(50) NOT NULL,
+    MiddleName VARCHAR(50) NOT NULL,
+    LastName VARCHAR(50) NOT NULL,
+    JobTitle VARCHAR(50) NOT NULL,
+    DepartmentId INT NOT NULL FOREIGN KEY (DepartmentId) REFERENCES Departments(Id),
+    HireDate DATETIME NOT NULL,
+    Salary DECIMAL(15,2) NOT NULL,
+    AddressId INT NULL FOREIGN KEY (AddressId) REFERENCES Addresses(Id)
+)
